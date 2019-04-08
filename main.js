@@ -1,39 +1,42 @@
 'use strict';
 
+// input type numer
+// constante número aleatorio con el valor dado (100)
+// function para game
+// variable parseInt para número de usuario para saber con nque dato estoy trabajando
+// innerHTML estaba bien 
+
+const counter = document.querySelector('.counter');
 const inputNumber = document.querySelector('.input__number');
 let testButton = document.querySelector('.test__button');
 const check = document.querySelector('.check');
-const acc = document.querySelector('.acc')
-
-// let i = 0 // inicializador para contadir
-// i = i+1
-// counter.innerHTML = i // dentro de condicional cuando no es igual
 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * 100);
   }
   console.log('> ' + getRandomNumber(100));
 
+
 function game() {
-    const userNumber = parseInt(inputNumber.value)
-    if (userNumber > getRandomNumber) {
-        check.innerHTML = 'Demasiado alto';
-    } else if (userNumber < getRandomNumber) {
-        check.innerHTML = 'Demasiado bajo';
-    } else {
-        check.innerHTML = '¡HAS GANADO CAMPEONA!';
+
+    const userNumber = parseInt(inputNumber.value);
+
+    if (userNumber === getRandomNumber(100)) {
+    console.log('¡HAS GANADO CAMPEONA!')
+    } else if (userNumber > getRandomNumber(100)) {
+    console.log('Demasiado alto')
+    }  else {
+    console.log('Demasiado bajo')
     }
+    
+    let i = 0;
+    i = i+1;
+    counter.innerHTML = i; 
 }
-
-
-// function countClick() {
-//     testButton += 1;
-//     countClick = acc.innerHTML;
-// }
 
 testButton.addEventListener('click', game);
 
-testButton.addEventListener('click',testButton);
+testButton.addEventListener('click', counter);
 
 
 

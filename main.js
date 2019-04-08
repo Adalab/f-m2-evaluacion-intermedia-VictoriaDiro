@@ -1,15 +1,11 @@
 'use strict';
 
-// generar un número al alzar entre 1 y 100
-// en h2 se imprime si el número del input es mayor o menor, o si lo ha conseguido
-// el contador de la derecha cuenta el número de intentos
-// cuando acierte el juego se termina
-// al pulsar el botón test acceder a input y mostrar en cosola
 
 
 const inputNumber = document.querySelector('.input__number');
-const testButton = document.querySelector('.test__button');
+let testButton = document.querySelector('.test__button');
 const check = document.querySelector('.check');
+const acc = document.querySelector('.acc')
 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * 100);
@@ -17,16 +13,23 @@ function getRandomNumber(max) {
   console.log('> ' + getRandomNumber(100));
 
 function checkYourNumber() {
-    if(inputNumber.value === getRandomNumber) {
-        check.innerHTML = '¡HAS GANADO CAMPEONA!';
-    } else if(inputNumber < getRandomNumber) {
-        check.innerHTML = 'Demasiado alto';
+    if (inputNumber.value === getRandomNumber) {
+        check.innerText = '¡HAS GANADO CAMPEONA!';
+    } else if (inputNumber.value < getRandomNumber) {
+        check.innerText = 'Demasiado bajo';
     } else {
-        check.innerHTML = 'Demasiado bajo';
+        check.innerText = 'Demasiado alto';
     }
 }
 
+function countClick() {
+    testButton += 1;
+    acc.innerHTML = countClick;
+}
+
 testButton.addEventListener('click', checkYourNumber);
+
+testButton.addEventListener('click',testButton);
 
 
 

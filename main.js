@@ -8,6 +8,7 @@
 
 
 const inputNumber = document.querySelector('.input__number');
+const testButton = document.querySelector('.test__button');
 const check = document.querySelector('.check');
 
 function getRandomNumber(max) {
@@ -15,15 +16,17 @@ function getRandomNumber(max) {
   }
   console.log('> ' + getRandomNumber(100));
 
-if(inputNumber === getRandomNumber) {
-    console.log='¡HAS GANADO CAMPEONA!';
-} else if(inputNumber > getRandomNumber) {
-    console.log='Demasiado alto';
-} else {
-    console.log='Demasiado bajo';
+function checkYourNumber() {
+    if(inputNumber.value === getRandomNumber) {
+        check.innerHTML = '¡HAS GANADO CAMPEONA!';
+    } else if(inputNumber < getRandomNumber) {
+        check.innerHTML = 'Demasiado alto';
+    } else {
+        check.innerHTML = 'Demasiado bajo';
+    }
 }
 
-check.addEventListener('click', );
+testButton.addEventListener('click', checkYourNumber);
 
 
 

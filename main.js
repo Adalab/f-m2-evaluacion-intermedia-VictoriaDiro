@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 const inputNumber = document.querySelector('.input__number');
 let testButton = document.querySelector('.test__button');
 const check = document.querySelector('.check');
@@ -12,7 +10,7 @@ function getRandomNumber(max) {
   }
   console.log('> ' + getRandomNumber(100));
 
-function checkYourNumber() {
+function checkYourNumber(getRandomNumber) {
     if (inputNumber.value === getRandomNumber) {
         check.innerText = '¡HAS GANADO CAMPEONA!';
     } else if (inputNumber.value < getRandomNumber) {
@@ -24,7 +22,7 @@ function checkYourNumber() {
 
 function countClick() {
     testButton += 1;
-    acc.innerHTML = countClick;
+    countClick = acc.innerHTML;
 }
 
 testButton.addEventListener('click', checkYourNumber);
